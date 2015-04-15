@@ -1,7 +1,7 @@
 # AngularJS-WebDav
 Rough prototype that provides webdav access for MS Word documents via ASP.Net MVC app
 
-Brief preview - http://im.ezgif.com/tmp/ezgif-3036652698.gif
+Brief preview - https://github.com/yurykorzun/AngularJS-WebDav/blob/master/documents.mp4
 
 Based on the post written in 2005 by Hoju Saram - http://thehojusaram.blogspot.com/2007/06/c-webdav-server-with-sql-backend-source.html
 
