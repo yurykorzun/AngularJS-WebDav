@@ -16,14 +16,14 @@ namespace DocumentManagement.Tests
             {
                 ResType = 0,
                 LockDepth = 2,
-                LockOwner = @"PBHC\Yury.Korzun",
+                LockOwner = @"Yury.Korzun",
                 LockOwnerType = 1,
                 LockScope = 2,
                 LockType = 1,
                 FileId = 1,
                 Timeout = 3600,
-                CreatedUser = @"PBHC\Yury.Korzun",
-                UpdatedUser = @"PBHC\Yury.Korzun"
+                CreatedUser = @"Yury.Korzun",
+                UpdatedUser = @"Yury.Korzun"
             };
 
             var newLock = LockService.SaveLock(newLockItem);
