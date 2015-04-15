@@ -1,0 +1,69 @@
+﻿<div ng-show="folderId" class="container">
+    <style>
+        .documentsGrid {
+            width: 900px;
+            height: 250px;
+        }
+    </style>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="row">
+                <div ng-show="parentFolderId" class="col-md-1">
+                   <h3> <a ng-href="/#/folder/{{ parentFolderId }}" style="color:black;"><span class="glyphicon glyphicon-arrow-up"></span></a></h3>
+                </div>
+                <div class="col-md-7">
+                    <h3><span class="glyphicon glyphicon-folder-open"></span> {{ folderName }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-5">
+                    <button type="button" class="btn btn-primary" ng-click="showFileModal()">
+                        <i class="fa fa-cloud-upload"></i> Upload file
+                    </button>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary" ng-click="showFolderModal()">
+                        <i class="fa fa-folder-o"></i> Create Folder
+                    </button>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="folderGrid" ui-grid="gridOptions" class="documentsGrid"></div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/ng-template" id="uploadFileModel">
+    <div class="modal-header">
+        <h3 class="modal-title">Upload file</h3>
+    </div>
+    <div class="modal-body">
+        <div><input type="file" nv-file-select="" uploader="uploader" title="Upload file" /></div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="uploadFile()" ng-disabled="uploader.queue.length===0">Upload</button>
+        <button class="btn btn-warning" ng-click="closeFileModal()">Cancel</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="createFolderModel">
+    <div class="modal-header">
+        <h3 class="modal-title">Create folder</h3>
+    </div>
+    <div class="modal-body">
+        Folder name: <input type="text" name="folderName" ng-pattern="/[a-zA-Z]*$/" ng-model="newFolderName" title="folderName" required>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="createFolder()" ng-disabled="!newFolderName">CreateFolder</button>
+        <button class="btn btn-warning" ng-click="closeFolderModal()">Cancel</button>
+    </div>
+</script>
